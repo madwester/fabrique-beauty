@@ -1,0 +1,420 @@
+//@import 'variables';
+//@import 'mixins';
+
+//MIXINS
+
+@mixin ease-animation($seconds) {
+    -webkit-transition: all $seconds ease-in-out;
+    -moz-transition: all $seconds ease-in-out;
+    -ms-transform: all $seconds ease-in-out;
+    -o-transition: all $seconds ease-in-out;
+    transition: all $seconds ease-in-out;
+}
+
+@mixin transition($transition...) {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transform: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+}
+
+@mixin background-size($size){
+    -webkit-background-size: $size;
+    -moz-background-size: $size;
+    -ms-background-size: $size;
+    -o-background-size: $size;
+    background-size: $size;
+}
+
+@mixin rotate($rotate) {
+    -webkit-transform: rotate($rotate);
+    -moz-transform: rotate($rotate);
+    -ms-transform: rotate($rotate);
+    -o-transform: rotate($rotate);
+    transform: rotate($rotate);
+}
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+    transform: $transform;
+}
+
+@mixin border-radius($border-radius) {
+    -webkit-border-radius: $border-radius;
+    -moz-border-radius: $border-radius;
+    -ms-border-radius: $border-radius;
+    -o-border-radius: $border-radius;
+    border-radius: $border-radius;
+}
+
+@mixin box-shadow($box-shadow...) {
+    -webkit-box-shadow: $box-shadow;
+       -moz-box-shadow: $box-shadow;
+            box-shadow: $box-shadow;
+}
+
+@mixin reset(){
+    margin: 0;
+    padding: 0;
+}
+
+// Color Variables
+$primarycolor-yellow: #face62;
+$primarycolor-gray: #4f4847;
+$primarycolor-light-gray: #b7b7b7;
+$primary-color-dark: #519657;
+$default-light-gray: #e0e0e0;
+$default-dark-gray: #595959;
+$active-gray: #635e5b;
+
+/*
+
+lg = 1200px+
+md = 992px-1199px
+sm - 767px-991px
+xs = 0-767px
+
+Hamburger only is xs
+
+*/
+
+/*---------------------------
+
+GENERAL
+
+---------------------------*/
+
+body {
+    @include reset();
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+ul{
+    list-style: none;
+    @include reset();
+}
+.container-fluid {
+}
+
+/*---------------------------
+
+NAVBAR
+
+---------------------------*/
+
+.navbar {
+    margin: 10px 0 0 0;
+    border: 0;
+    border-bottom: 8px solid $active-gray;
+    
+    a {
+        text-transform: uppercase;
+        font-size: 15px;
+        font-weight: 700;
+    }
+}
+
+.nav-button {
+    padding: 0;
+    margin: 0 7px;
+    border-radius: 5px 5px 0 0;
+    a{
+        padding: 0;
+        color: black;
+    }
+    i {
+        font-size: 18px;
+        margin: 10px;
+        color: black;
+    }
+}
+.login-btn {
+    background-color: $primarycolor-yellow;
+    position: relative;
+}
+.contact-btn {
+    background-color: $primarycolor-light-gray;
+}
+.nav-logo {
+    img {
+        width: 50%;
+        margin: 20px 10px 0 10px;
+    }
+}
+@media only screen and (max-width: 430px){
+    .nav-logo {
+        img {
+            width: 110%;
+            margin: 20px 10px 0 10px;
+        }
+    }
+}
+@media only screen and (min-width: 431px) and (max-width: 549px){
+    .nav-logo {
+        img {
+            width: 90%;
+            margin: 20px 10px 0 10px;
+        }
+    }
+}
+@media only screen and (min-width: 550px) and (max-width: 689px){
+    .nav-logo {
+        img {
+            width: 80%;
+            margin: 20px 10px 0 10px;
+        }
+    }
+}
+@media only screen and (min-width: 690px) and (max-width: 767px){
+    .nav-logo {
+        img {
+            width: 60%;
+            margin: 20px 10px 0 10px;
+        }
+    }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1350px){
+    .nav-logo {
+        img {
+            width: 30%;
+        }
+    }
+}
+@media only screen and (min-width: 1350px){
+    .nav-logo {
+        img {
+            width: 20%;
+        }
+    }
+}
+
+.nav-search {
+    margin: 15px 0px 0 0;
+    i{
+        font-size: 28px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .nav-button {
+        border-radius: 0;
+        margin: 0;
+    }
+    .navbar-default .navbar-nav > .active > a {
+        border-radius: 0;
+    }
+    .navbar{
+        border-bottom: 3px solid $active-gray;
+        min-height: 0;
+    }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 870px) {
+    .navbar-nav > li > a {
+        font-size: 99%;
+    }
+}
+
+
+/*---------------------------
+
+HAMBURGER MENU
+
+---------------------------*/
+
+.navbar-default .navbar-toggle {
+    margin-top: 14px;
+    margin-right: 0px;
+    padding: 9px 0px;
+    &:focus,
+    &:hover {
+        background-color: white
+    }
+    border-color: transparent;
+    .icon-bar {
+        background-color: black;
+        transition: 300ms ease-in-out;
+        position: relative;
+        width: 24px;
+        height: 3px
+    }
+    .icon-bar:last-child {
+        @include transform(rotate(-45deg));
+        top: -7px
+    }
+    .icon-bar:nth-child(2) {
+        @include transform(rotate(45deg));
+        top: 7px
+    }
+    .icon-bar:nth-child(3) {
+        opacity: 0
+    }
+    &.collapsed .icon-bar {
+        @include transform(rotate(0deg));
+        top: 0;
+        opacity: 1
+    }
+}
+
+/*---------------------------
+
+HOME PAGE
+
+---------------------------*/
+.container-fluid.feature {
+    background-color: $primarycolor-light-gray;
+    @include reset();
+    img {
+        max-width: 100%;
+        @include reset();
+    }
+}
+
+.about {
+    background-image: url('../images/octicons-yellow.png');
+    background-repeat: no-repeat;
+    background-position: 95% -20%;
+    text-align: center;
+    p {
+        margin: 60px;
+        font-size: 1.2em;
+    } 
+}
+
+/*---------------------------
+
+SEARCH BAR 
+
+---------------------------*/
+
+.search-input[type=text] {
+	float: right;  
+    width: 40px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../images/searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 10px 0 10px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+.search-input[type=text]:focus {
+    width: 100%;
+    border: 2px solid $primarycolor-yellow;
+    outline: none;
+}
+
+/*---------------------------
+
+LOGIN MODAL
+
+---------------------------*/
+
+.form-control {
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+    border: 2px solid  $primarycolor-light-gray; 
+    background-color: white;
+}
+.form-control::placeholder {
+    color: black;
+    font-weight: 300;
+    //text-transform: capitalize;
+}
+.modal {
+    text-align: center;
+}
+ 
+.modal-content {
+    background-color: white;
+}
+.modal-footer {
+    text-align: left;
+    h5 {
+        text-transform: uppercase;
+        font-weight: 700;
+        font-size: 1.4em;
+    }
+}
+.modal-title{
+    text-transform: uppercase;
+    font-weight: 700;
+    color: black;
+    font-size: 1.4em;
+    margin: 5px 0 15px 0;
+}
+.btn-modal {
+    color: white;
+    border: 0;
+    text-transform: uppercase;
+    padding: 10px;
+    width: 100%;
+}
+.btn-login {
+    background-color: $primarycolor-yellow;
+}
+.btn-register {
+    background-color: $primarycolor-light-gray; 
+}
+
+/*---------------------------
+
+FOOTER  
+
+---------------------------*/
+
+footer { 
+    bottom: 0;
+    width: 100%;
+    background-color: $primarycolor-gray;
+    height: 200px;
+    margin: 50px 0 0 0;
+    img {
+        margin: 20px 0;
+    }
+}
+.wrap-foot {
+    margin: 15px;
+}
+.col-foot {
+    ul {
+        padding: 0;
+    }
+    color: white;
+    a{
+        color: white;
+    }
+    h6 {
+        font-size: 1.1em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+}
+.social-media-list {
+    display: inline-block; 
+    i {
+        font-size: 22px;
+        margin: 10px 8px;
+        color: white;
+    }
+    i:first-child {
+        margin-left: 0;
+    }
+    i:last-child {
+        margin-right: 0;
+    }
+    
+}
