@@ -1,9 +1,4 @@
-// MIXINS
-
-@mixin reset(){
-    margin: 0;
-    padding: 0;
-}
+//MIXINS
 
 @mixin ease-animation($seconds) {
     -webkit-transition: all $seconds ease-in-out;
@@ -58,3 +53,47 @@
        -moz-box-shadow: $box-shadow;
             box-shadow: $box-shadow;
 }
+
+@mixin reset(){
+    margin: 0;
+    padding: 0;
+}
+
+@mixin ease-animation($element, $seconds) {
+    -webkit-transition: $element $seconds ease-in-out;
+    -moz-transition: $element $seconds ease-in-out;
+    -ms-transition: $element $seconds ease-in-out;
+    -o-transition: $element $seconds ease-in-out;
+    transition: $element $seconds ease-in-out;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: eot woff2 woff ttf svg) {
+	$src: null;
+
+	$extmods: (
+		eot: "?",
+		svg: "#" + str-replace($name, " ", "_")
+	);
+
+	$formats: (
+		otf: "opentype",
+		ttf: "truetype"
+	);
+
+	@each $ext in $exts {
+		$extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext);
+		$format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+		$src: append($src, url(quote($path + "." + $extmod)) format(quote($format)), comma);
+	}
+
+	@font-face {
+		font-family: quote($name);
+		font-style: $style;
+		font-weight: $weight; 
+		src: $src;
+	}
+} 

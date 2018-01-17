@@ -1,86 +1,6 @@
-//@import 'variables';
-//@import 'mixins';
+@import 'mixins';
+@import 'variables';
 
-//MIXINS
-
-@mixin ease-animation($seconds) {
-    -webkit-transition: all $seconds ease-in-out;
-    -moz-transition: all $seconds ease-in-out;
-    -ms-transform: all $seconds ease-in-out;
-    -o-transition: all $seconds ease-in-out;
-    transition: all $seconds ease-in-out;
-}
-
-@mixin transition($transition...) {
-    -webkit-transition: $transition;
-    -moz-transition: $transition;
-    -ms-transform: $transition;
-    -o-transition: $transition;
-    transition: $transition;
-}
-
-@mixin background-size($size){
-    -webkit-background-size: $size;
-    -moz-background-size: $size;
-    -ms-background-size: $size;
-    -o-background-size: $size;
-    background-size: $size;
-}
-
-@mixin rotate($rotate) {
-    -webkit-transform: rotate($rotate);
-    -moz-transform: rotate($rotate);
-    -ms-transform: rotate($rotate);
-    -o-transform: rotate($rotate);
-    transform: rotate($rotate);
-}
-
-@mixin transform($transform) {
-    -webkit-transform: $transform;
-    -moz-transform: $transform;
-    -ms-transform: $transform;
-    -o-transform: $transform;
-    transform: $transform;
-}
-
-@mixin border-radius($border-radius) {
-    -webkit-border-radius: $border-radius;
-    -moz-border-radius: $border-radius;
-    -ms-border-radius: $border-radius;
-    -o-border-radius: $border-radius;
-    border-radius: $border-radius;
-}
-
-@mixin box-shadow($box-shadow...) {
-    -webkit-box-shadow: $box-shadow;
-       -moz-box-shadow: $box-shadow;
-            box-shadow: $box-shadow;
-}
-
-@mixin reset(){
-    margin: 0;
-    padding: 0;
-}
-
-// Color Variables
-$primarycolor-yellow: #face62;
-$primarycolor-gray: #4f4847;
-$primarycolor-light-gray: #b7b7b7;
-$primary-color-dark: #519657;
-$default-light-gray: #e0e0e0;
-$default-dark-gray: #595959;
-$active-gray: #635e5b;
-
-/*
-
-lg = 1200px+
-md = 992px-1199px
-sm - 767px-991px
-xs = 0-767px
-
-Hamburger only is xs
-
-*/
 
 /*---------------------------
 
@@ -90,6 +10,7 @@ GENERAL
 
 body {
     @include reset();
+    font-family: 'gotham';
 }
 
 a {
@@ -113,10 +34,9 @@ NAVBAR
     margin: 10px 0 0 0;
     border: 0;
     border-bottom: 8px solid $active-gray;
-    
     a {
         text-transform: uppercase;
-        font-size: 15px;
+        font-size: 17px;
         font-weight: 700;
     }
 }
@@ -366,8 +286,139 @@ LOGIN MODAL
 .btn-login {
     background-color: $primarycolor-yellow;
 }
-.btn-register {
+.btn-login-gray {
     background-color: $primarycolor-light-gray; 
+}
+.nav-tabs > li.active > a {
+    background-color: $primarycolor-yellow;
+    border: 0;
+}
+.nav-tabs {
+    border-bottom: 3px solid $primarycolor-yellow;
+}
+.tab-content {
+    margin-top: 20px;
+}
+
+/*---------------------------
+
+FULL WIDTH CAROUSEL
+
+---------------------------*/
+
+.carousel,
+.item,
+.active {
+    height: 100%;
+}
+
+.carousel-inner {
+    height: 100%;
+}
+
+.carousel-control .icon-prev,
+.carousel-control .icon-next {
+    font-size: 50px;
+}
+
+.fill {
+    width: 100%;
+    height: 810px;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+@media only screen and (max-width: 767px) {
+    .fill {
+        height: 400px;
+    }
+}
+/*---------------------------
+
+IMAGE ROW
+
+---------------------------*/
+.image-row {
+    margin: 50px 0 20px 0;
+}
+
+.image-col {
+    height: 500px;
+    width: 100%;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.image-caption {
+    padding: 10px;
+    position: absolute;
+    width: 250px;
+    background-color: white;
+    top: auto;
+    bottom: 40px;
+    a{
+        font-size: 1.1em;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+    p{
+        font-size: 0.95em;
+    }
+}
+.image-caption.left {
+    right: auto;
+    left: 50px;
+}
+.image-caption.centered {
+    left: 0;
+    right: 0;
+    margin: auto
+}
+/*---------------------------
+
+TOP PICK ROW
+
+---------------------------*/
+.top-pick-container {
+}
+.top-pick-row {
+    margin: 50px auto 30px auto;
+    width: auto;
+    text-align: center;
+}
+.top-pick-col {
+    margin: 10px 0;
+    img {
+        width: 150px;
+        height: 150px;
+    }
+}
+
+.top-pick-heading {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 22px;
+    margin: 10px;
+}
+.top-pick-caption {
+    margin: 12px 0;
+    h4 {
+        text-transform: uppercase;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+    h6 {
+        
+    }
+    h6::before{
+    content:"$";
+    }
 }
 
 /*---------------------------
@@ -386,6 +437,13 @@ footer {
         margin: 20px 0;
     }
 }
+
+@media only screen and (max-width: 991px) {
+    footer {
+        height: 480px;
+    }
+}
+ 
 .wrap-foot {
     margin: 15px;
 }
@@ -403,6 +461,7 @@ footer {
         text-transform: uppercase;
     }
 }
+
 .social-media-list {
     display: inline-block; 
     i {
@@ -418,3 +477,4 @@ footer {
     }
     
 }
+

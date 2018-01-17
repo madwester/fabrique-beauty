@@ -95,10 +95,10 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: @carousel-control-width;
+  //width: @carousel-control-width;
   .opacity(@carousel-control-opacity);
   font-size: @carousel-control-font-size;
-  color: @carousel-control-color;
+  color: green;
   text-align: center;
   text-shadow: @carousel-text-shadow;
   background-color: rgba(0, 0, 0, 0); // Fix IE9 click-thru bug
@@ -107,12 +107,12 @@
 
   // Set gradients for backgrounds
   &.left {
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.5); @end-color: rgba(0,0,0,.0001));
+    //#gradient > .horizontal(@start-color: rgba(0,0,0,.5); @end-color: rgba(0,0,0,.0001));
   }
   &.right {
     left: auto;
     right: 0;
-    #gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.5));
+    //#gradient > .horizontal(@start-color: rgba(0,0,0,.0001); @end-color: rgba(0,0,0,.5));
   }
 
   // Hover/focus state

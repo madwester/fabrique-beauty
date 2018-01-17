@@ -1,5 +1,3 @@
-//VARIABLES
-
 // Color Variables
 $primarycolor-yellow: #face62;
 $primarycolor-gray: #4f4847;
@@ -7,6 +5,25 @@ $primarycolor-light-gray: #b7b7b7;
 $primary-color-dark: #519657;
 $default-light-gray: #e0e0e0;
 $default-dark-gray: #595959;
+$active-gray: #635e5b;
+
+/* 
+
+lg = 1200px+
+md = 992px-1199px
+sm - 767px-991px
+xs = 0-767px
+
+Hamburger only is xs
+
+*/
+
+@include font-face(Gotham, '../fonts/Gotham-Bold', bold, normal, eot svg ttf woff);
+@include font-face(Gotham, '../fonts/Gotham-BoldItalic', bold, italic, eot svg ttf woff);
+@include font-face(Gotham, '../fonts/Gotham-Book', normal, normal, eot svg ttf woff);
+@include font-face(Gotham, '../fonts/Gotham-BookItalic', normal, italic, eot svg ttf woff);
+@include font-face(Gotham, '../fonts/Gotham-Light', 300, normal, eot svg ttf woff);
+@include font-face(Gotham, '../fonts/Gotham-LightItalic', 300, italic, eot svg ttf off);
 
 // Google Fonts
 @import url('https://fonts.googleapis.com/css?family=Caveat+Brush|Covered+By+Your+Grace|Lato|Reenie+Beanie');

@@ -21,7 +21,8 @@ gulp.task('sass', function(){
 });
 
 gulp.task('js', function(){
-  return gulp.src(['js/custom.js'])
+  return gulp.src(['js/custom.js'
+  ,'js/carousel-slider.js'])
   .pipe(concat('main.js'))
   .pipe(browserSync.reload({stream:true}))
   .pipe(gulp.dest(buildpath+'/js'));

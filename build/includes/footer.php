@@ -2,8 +2,8 @@
 <footer class="footer">
         <div class="container-fluid">
             <div class="row wrap-foot">
-              <div class="col-md-6">
-                <div class="col-md-4 col-foot">
+              <div class="col-md-6 col-sm-12">
+                <div class="col-md-4 col-sm-12 col-foot">
                   <h6>Products</h6>
                   <ul>
                     <li><a href="#">Face Care</a></li>
@@ -12,7 +12,7 @@
                     <li><a href="#">Make up</a></li>
                   </ul>
                 </div>
-                <div class="col-md-4 col-foot">
+                <div class="col-md-4 col-sm-12 col-foot">
                   <h6>Info</h6>
                   <ul>
                     <li><a href="#">Terms & Conditions</a></li>
@@ -20,7 +20,7 @@
                     <li><a href="#">Shipping & Returns</a></li>
                   </ul>
                 </div>
-                <div class="col-md-4 col-foot">
+                <div class="col-md-4 col-sm-12 col-foot">
                   <h6>Contact</h6>
                   <ul>
                     <li><a href="mailto:info@fabriquebeauty.com">info@fabriquebeauty.com</a></li>
@@ -29,7 +29,7 @@
                   </ul>
                 </div>
               </div>
-               <div class="col-md-6 text-right">
+               <div class="col-md-6 col-sm-12 text-right">
                  
                  <img src="images/logo-white.png">
                  <div class="social-media">
