@@ -30,13 +30,13 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="face.php">face care<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">body care</a></li>
+        <li><a href="face.php">face<span class="sr-only">(current)</span></a></li>
+        <li><a href="#">body</a></li>
         <li><a href="#">hair</a></li>
-        <li><a href="#">make up</a></li>
+        <li><a href="#">makeup</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="nav-button contact-btn"><a href="#">contact <i class="icon ion-ios-arrow-forward"></i></a></li>
+        <li class="nav-button contact-btn"><a href="contact.php">contact <i class="icon ion-ios-arrow-forward"></i></a></li>
         <li class="nav-button login-btn"><a href="#">register / login <i class="icon ion-ios-arrow-forward"></i></a></li>
       </ul>
     </div>

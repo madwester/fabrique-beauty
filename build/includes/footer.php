@@ -6,8 +6,8 @@
                 <div class="col-md-4 col-sm-12 col-foot">
                   <h6>Products</h6>
                   <ul>
-                    <li><a href="#">Face Care</a></li>
-                    <li><a href="#">Body Care</a></li>
+                    <li><a href="#">Face</a></li>
+                    <li><a href="#">Body</a></li>
                     <li><a href="#">Hair</a></a></li>
                     <li><a href="#">Make up</a></li>
                   </ul>
@@ -43,3 +43,7 @@
             </div>
         </div>
     </footer>
+<script src="/compontents/jquery/dist/jquery.min.js"></script>
+<script src="/compontents/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<?php include("includes/login-modal.php");?> 

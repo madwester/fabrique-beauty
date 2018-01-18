@@ -16,6 +16,11 @@ body {
 a {
     text-decoration: none;
     color: black;
+    &:hover,
+    &:focus,
+    &:active{
+        color: black;
+    }
 }
 ul{
     list-style: none;
@@ -24,6 +29,13 @@ ul{
 .container-fluid {
 }
 
+.zero-margin {
+    @include reset();
+}
+
+.border {
+    border: 1px solid green;
+}
 /*---------------------------
 
 NAVBAR
@@ -188,25 +200,7 @@ HAMBURGER MENU
 HOME PAGE
 
 ---------------------------*/
-.container-fluid.feature {
-    background-color: $primarycolor-light-gray;
-    @include reset();
-    img {
-        max-width: 100%;
-        @include reset();
-    }
-}
 
-.about {
-    background-image: url('../images/octicons-yellow.png');
-    background-repeat: no-repeat;
-    background-position: 95% -20%;
-    text-align: center;
-    p {
-        margin: 60px;
-        font-size: 1.2em;
-    } 
-}
 
 /*---------------------------
 
@@ -254,12 +248,18 @@ LOGIN MODAL
     font-weight: 300;
     //text-transform: capitalize;
 }
+.form-control:focus {
+    outline: 2px solid $primarycolor-yellow;;
+}
 .modal {
     text-align: center;
 }
  
 .modal-content {
     background-color: white;
+    p{
+        margin: 0 10px 30px 10px;
+    }
 }
 .modal-footer {
     text-align: left;
@@ -273,8 +273,8 @@ LOGIN MODAL
     text-transform: uppercase;
     font-weight: 700;
     color: black;
-    font-size: 1.4em;
-    margin: 5px 0 15px 0;
+    font-size: 1.2em;
+    margin: 30px 0 20px 0;
 }
 .btn-modal {
     color: white;
@@ -282,6 +282,7 @@ LOGIN MODAL
     text-transform: uppercase;
     padding: 10px;
     width: 100%;
+    margin: 3px 0;
 }
 .btn-login {
     background-color: $primarycolor-yellow;
@@ -291,7 +292,12 @@ LOGIN MODAL
 }
 .nav-tabs > li.active > a {
     background-color: $primarycolor-yellow;
-    border: 0;
+    border: 1px solid $primarycolor-yellow;
+    &:active,
+    &:focus{
+        color: black;
+        background-color: $primarycolor-yellow;
+    }
 }
 .nav-tabs {
     border-bottom: 3px solid $primarycolor-yellow;
@@ -345,6 +351,17 @@ IMAGE ROW
     margin: 50px 0 20px 0;
 }
 
+@media only screen and (max-width: 767px) {
+    .image-row {
+       width: 350px;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .image-row {
+       width: 550px;
+    }
+}
+
 .image-col {
     height: 500px;
     width: 100%;
@@ -380,6 +397,8 @@ IMAGE ROW
     right: 0;
     margin: auto
 }
+
+
 /*---------------------------
 
 TOP PICK ROW
@@ -421,6 +440,112 @@ TOP PICK ROW
     }
 }
 
+/*---------------------------
+
+PRODUCT CONTENT
+
+---------------------------*/
+.product-row {
+    //border: 1px solid pink;
+    margin: 15px 45px 15px 0; 
+}
+.product-item {
+    //border: 1px solid green;
+    text-align: center;
+    h4 {
+        text-transform: uppercase;
+        font-size: 1.3em;
+        font-weight: 700;
+    }
+    h6 {
+        font-size: 1.1em;
+    }
+    h6::before{
+    content:"$";
+    }
+}
+.sidebar {
+    margin: 8px 0;
+}
+
+/*---------------------------
+
+CONTACT / FAQ
+
+---------------------------*/
+
+.container-faq {
+    border-top: 1px solid $default-light-gray;
+    padding: 20px 0 20px 200px;
+}
+.letter-box {
+    width: 100%;
+    height: 300px;
+    background-image: url('../images/letter-box.jpg');
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    margin: 0 0 170px 0;
+}
+.contact-inline {
+    text-align: center;
+    position: absolute;
+    background-color: white;
+    width: 600px;
+    left: 0;
+    right: 0;
+    top: 400px;
+    margin: auto;
+    padding: 20px 30px;
+    h1{
+        font-size: 1.8em;
+        font-weight: 700;
+    }
+}
+.btn-faq {
+    background-color: transparent;
+}
+.btn-faq::before {
+    width: 44px;
+    height: 44px;
+    content: "\f067";
+    font-family: FontAwesome;
+}
+.faq-inline-row {
+    //border-top: solid 1px gray;
+}
+
+.faq-inline {
+    margin: 15px 0;
+    h3{
+        text-transform: uppercase;
+        font-size: 1.5em;
+        font-weight: 700;
+        color: $primarycolor-yellow;
+        margin-bottom: 15px;
+    }
+    p{
+        font-size: 1.2em;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+}
+.question {
+    margin-bottom: 10px;
+    a {
+        font-size: 1.1em;
+    }
+}
+.contactrow {
+    a {
+        
+    }
+}
+#contactus-link {
+    font-size: 1.2em;
+    color: black;
+    text-decoration: underline;
+}
 /*---------------------------
 
 FOOTER  
