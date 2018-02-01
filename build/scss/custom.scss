@@ -312,12 +312,6 @@ FULL WIDTH CAROUSEL
 
 ---------------------------*/
 
-.carousel,
-.item,
-.active {
-    height: 100%;
-}
-
 .carousel-inner {
     height: 100%;
 }
@@ -329,7 +323,7 @@ FULL WIDTH CAROUSEL
 
 .fill {
     width: 100%;
-    height: 810px;
+    height: 100%;
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;

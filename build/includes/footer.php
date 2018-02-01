@@ -31,7 +31,7 @@
               </div>
                <div class="col-md-6 col-sm-12 text-right">
                  
-                 <img src="images/logo-white.png">
+                 <img src="/build/images/logo-white.png">
                  <div class="social-media">
                     <ul class="social-media-list">
                         <i class="fa fa-facebook" aria-hidden="true"></i>
@@ -45,5 +45,4 @@
     </footer>
 <script src="/compontents/jquery/dist/jquery.min.js"></script>
 <script src="/compontents/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
-<?php include("includes/login-modal.php");?> 
+<script src="/build/js/main.js"></script>

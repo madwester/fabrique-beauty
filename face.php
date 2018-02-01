@@ -1,6 +1,8 @@
 <?php $page_title = "Fabrique Beauty - Face Care";?>
-<?php include("includes/head.php");?>
-<?php include("includes/navigation.php");?>
+<?php include("build/includes/database.php"); ?>
+<?php include("build/includes/login-modal.php"); ?>
+<?php include("build/includes/head.php");?>
+<?php include("build/includes/navigation.php");?>
 <main>
     
     <div class="container-fluid">
@@ -89,5 +91,5 @@
     </div>
 </div>
 </main>
-<?php include("includes/footer.php");?>   
+<?php include("build/includes/footer.php");?>   
 

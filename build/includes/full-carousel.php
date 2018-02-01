@@ -9,15 +9,15 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('images/main-image/car-nature-1400-822.jpg');"></div>
+                <div class="fill" style="background-image:url('build/images/main-image/car-nature-1400-822.jpg');"></div>
             </div>
             <div class="item">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('images/main-image/nature-forest-trees-fog-1400-822.jpg');"></div>
+                <div class="fill" style="background-image:url('build/images/main-image/nature-forest-trees-fog-1400-822.jpg');"></div>
             </div>
             <div class="item">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('images/main-image/leaves-lighter-1400-822.jpg');"></div>
+                <div class="fill" style="background-image:url('build/images/main-image/leaves-lighter-1400-822.jpg');"></div>
             </div>
         </div>
         <!-- Controls -->
