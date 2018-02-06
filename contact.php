@@ -1,7 +1,9 @@
-<?php $page_title = "Fabrique Beauty - Face Care";?>
-<?php include("build/includes/login-modal.php");?>
-<?php include("build/includes/head.php");?>
-<?php include("build/includes/navigation.php");?>
+<?php 
+session_start();
+$page_title = "Fabrique Beauty - Face Care";
+include("build/includes/login-modal.php");
+include("build/includes/head.php");
+include("build/includes/navigation.php");?>
 <div class="container-fluid zero-margin">
     <div class="letter-box">
         <div class="contact-inline">

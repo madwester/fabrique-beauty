@@ -1,13 +1,17 @@
-<?php $page_title = "Fabrique Beauty - Face Care";?>
-<?php include("build/includes/database.php"); ?>
-<?php include("build/includes/login-modal.php"); ?>
-<?php include("build/includes/head.php");?>
-<?php include("build/includes/navigation.php");?>
+<?php 
+session_start();
+$page_title = "Fabrique Beauty - Face Care";
+include("build/includes/database.php");
+include("build/includes/login-modal.php");
+include("build/includes/head.php");
+include("build/includes/navigation.php");?>
 <main>
-    
+    <div class="container-fluid bread">
+        <h6>Category > Sub Category</h6>
+    </div>
     <div class="container-fluid">
         <div class="row">
-            <nav class="col-md-2 side-bar">
+            <nav class="col-lg-2 col-md-2 col-sm-3 side-bar">
                 <ul class="nav nav-stacked category-list">
                     <?php
                     //make sure to check the length when using foreach
@@ -26,60 +30,58 @@
                     <li><a href="#">Makeup</a></li>
                 </ul>
             </nav>
-            <div class="col-lg-10 col-md-10 content">
+            <div class="col-lg-10 col-md-10 col-sm-9 content">
                 <div class="row product-row">
-                    <div class="col-lg-3 col-md-3 product-item">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
                         <img src="http://via.placeholder.com/200x200">
                         <div class="product-caption">
                             <a href="#"><h4>Title</h4></a>
                             <h6>Price</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 product-item">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
                     <img src="http://via.placeholder.com/200x200">
                         <div class="product-caption">
                             <a href="#"><h4>Title</h4></a>
                             <h6>Price</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 product-item">  
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">  
                         <img src="http://via.placeholder.com/200x200">
                         <div class="product-caption">
                             <a href="#"><h4>Title</h4></a>
                             <h6>Price</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 product-item">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
                     <img src="http://via.placeholder.com/200x200">
                         <div class="product-caption">
                             <a href="#"><h4>Title</h4></a>
                             <h6>Price</h6>
                         </div>
                     </div>
-            </div>
-            <div class="row product-row">
-                    <div class="col-lg-3 col-md-3 product-item">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
                         <img src="http://via.placeholder.com/200x200">
                         <div class="product-caption">
                             <a href="#"><h4>Title</h4></a>
                             <h6>Price</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 product-item">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
                     <img src="http://via.placeholder.com/200x200">
                         <div class="product-caption">
                             <a href="#"><h4>Title</h4></a>
                             <h6>Price</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 product-item">  
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">  
                         <img src="http://via.placeholder.com/200x200">
                         <div class="product-caption">
                             <a href="#"><h4>Title</h4></a>
                             <h6>Price</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 product-item">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
                     <img src="http://via.placeholder.com/200x200">
                         <div class="product-caption">
                             <a href="#"><h4>Title</h4></a>

@@ -1,6 +1,9 @@
 @import 'mixins';
 @import 'variables';
 
+// MEDIA SIZES 
+@include media ("(min-width: #{$screen-lg + 1})") {}
+@include media ("(min-width: #{$screen-md + 1}) and (max-width: #{$screen-lg})") {}
 
 /*---------------------------
 
@@ -70,6 +73,9 @@ NAVBAR
 .login-btn {
     background-color: $primarycolor-yellow;
     position: relative;
+}
+.myaccount-btn {
+    background-color: $primarycolor-yellow;
 }
 .contact-btn {
     background-color: $primarycolor-light-gray;
@@ -540,21 +546,44 @@ CONTACT / FAQ
     color: black;
     text-decoration: underline;
 }
+
+.bread {
+    background-color: $active-gray;
+    color: white;
+}
+
 /*---------------------------
 
 FOOTER  
 
 ---------------------------*/
 
-footer { 
+footer {
     bottom: 0;
     width: 100%;
     background-color: $primarycolor-gray;
     height: 200px;
     margin: 50px 0 0 0;
+    padding: 15px;
     img {
-        margin: 20px 0;
+        margin: 15px 0 20px 0;
     }
+}
+.logo-foot {
+    text-align: right;
+}
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+    footer {
+        height: 300px;
+        img {
+            width: 100%;
+            margin: 0 0 15px 0;
+        }
+    }
+    .col-foot {
+        margin-bottom: 25px;
+    }
+    
 }
 
 @media only screen and (max-width: 991px) {
@@ -562,7 +591,23 @@ footer {
         height: 480px;
     }
 }
- 
+
+@media only screen and (max-width: 766px) {
+    footer {
+        height: auto;
+        img {
+            width: 200px;
+            margin: 0 0 15px 0;
+        }
+    }
+    .category-foot {
+        margin-bottom: 15px;
+    }
+    .col-foot {
+        margin-bottom: 25px;
+    }
+}
+
 .wrap-foot {
     margin: 15px;
 }

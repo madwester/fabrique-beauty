@@ -8,6 +8,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["login-name"] == "login-value"
     $query = "SELECT account_id, email, password FROM accounts WHERE email=?";
     $statement1 = $connection -> prepare($query);
     $statement1 -> bind_param("s", $email);
+    //execute runs the query with the parameter, it return true or false
     if( $statement1 -> execute() ){
         $result = $statement1 -> get_result();
         //check if a result is returned (number of rows)
@@ -44,6 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["login-name"] == "login-value"
 if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["register-name"] == "register-value"){
     //array to store errors in registration
     $errors = array();
+    $name = $_POST["name"];
     //verify so the email address is valid 
     $email = $_POST["email"];
     if( filter_var($email,FILTER_VALIDATE_EMAIL) == false ){
@@ -68,16 +70,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["register-name"] == "register-
         $hashed = password_hash($password, PASSWORD_DEFAULT);
         //create a query
         $query = "INSERT INTO accounts 
-        (email, password, active)
-        VALUES(?,?,1)";
+        (name, email, password, active)
+        VALUES(?,?,?,1)";
         $statement = $connection -> prepare($query); 
-        $statement -> bind_param("ss", $email, $hashed); //sss = string, string, string
+        $statement -> bind_param("sss",$name, $email, $hashed); //sss = string, string, string
         //accounts have been created
         if( $statement -> execute() ){
             $message["type"] = "success";
             $message["text"] = "Congratulations! Your account has successfully been registered!";
             $id = $connection -> insert_id;
             $_SESSION["userid"] = $id; //userid is a string 
+            $_SESSION["name"] = $name; //name is a string 
         }
         else{
             //errno is one of the properties of the class mysqli_connect
@@ -126,6 +129,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["register-name"] == "register-
                                 echo "<div class=\"alert $class\">$text</div>";
                             }
                         ?>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="name" id="register-name" placeholder="Your name"> 
+                        </div>
                         <!--Email-->
                         <?php
                             if($errors["email"]){

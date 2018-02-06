@@ -2,7 +2,7 @@
 <footer class="footer">
         <div class="container-fluid">
             <div class="row wrap-foot">
-              <div class="col-md-6 col-sm-12">
+              <div class="col-md-6 col-sm-8 col-xs-12 category-foot">
                 <div class="col-md-4 col-sm-12 col-foot">
                   <h6>Products</h6>
                   <ul>
@@ -29,7 +29,7 @@
                   </ul>
                 </div>
               </div>
-               <div class="col-md-6 col-sm-12 text-right">
+              <div class="col-md-6 col-sm-4 col-xs-12 logo-foot">
                  
                  <img src="/build/images/logo-white.png">
                  <div class="social-media">

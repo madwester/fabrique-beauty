@@ -68,6 +68,28 @@
 }
 
 // =============================================================================
+// Media Queries
+// =============================================================================
+
+@mixin media($queryString){
+    @media #{$queryString} {
+      @content;
+    }
+}
+
+@mixin ipad {
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    @content;
+  }
+}
+
+@mixin iphone {
+  @media only screen and (min-device-width : 320px) and (max-device-width : 736px)  {
+    @content;
+  }
+}
+
+// =============================================================================
 // Font Face
 // =============================================================================
 
