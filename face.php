@@ -1,10 +1,18 @@
 <?php 
 session_start();
-$page_title = "Fabrique Beauty - Face Care";
+include("autoloader.php");
 include("build/includes/database.php");
 include("build/includes/login-modal.php");
 include("build/includes/head.php");
-include("build/includes/navigation.php");?>
+include("build/includes/navigation.php");
+
+$page_title = "Fabrique Beauty - Face Care";
+
+//create instance of products class
+$products = new Products();
+$product_items = $products -> getProducts();
+?>
+
 <main>
     <div class="container-fluid bread">
         <h6>Category > Sub Category</h6>
@@ -39,56 +47,7 @@ include("build/includes/navigation.php");?>
                             <h6>Price</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
-                    <img src="http://via.placeholder.com/200x200">
-                        <div class="product-caption">
-                            <a href="#"><h4>Title</h4></a>
-                            <h6>Price</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">  
-                        <img src="http://via.placeholder.com/200x200">
-                        <div class="product-caption">
-                            <a href="#"><h4>Title</h4></a>
-                            <h6>Price</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
-                    <img src="http://via.placeholder.com/200x200">
-                        <div class="product-caption">
-                            <a href="#"><h4>Title</h4></a>
-                            <h6>Price</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
-                        <img src="http://via.placeholder.com/200x200">
-                        <div class="product-caption">
-                            <a href="#"><h4>Title</h4></a>
-                            <h6>Price</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
-                    <img src="http://via.placeholder.com/200x200">
-                        <div class="product-caption">
-                            <a href="#"><h4>Title</h4></a>
-                            <h6>Price</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">  
-                        <img src="http://via.placeholder.com/200x200">
-                        <div class="product-caption">
-                            <a href="#"><h4>Title</h4></a>
-                            <h6>Price</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 product-item">
-                    <img src="http://via.placeholder.com/200x200">
-                        <div class="product-caption">
-                            <a href="#"><h4>Title</h4></a>
-                            <h6>Price</h6>
-                        </div>
-                    </div>
-            </div>
+                </div>
         </div>
     </div>
 </div>

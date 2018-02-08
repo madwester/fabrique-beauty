@@ -1,16 +1,19 @@
 <?php 
 session_start();
-?>
-<?php $page_title = "Fabrique Beauty";?>
-<?php include("build/includes/database.php");?>
-<?php include("build/includes/login-modal.php");?> 
-<?php include("build/includes/head.php");?>
-<?php include("build/includes/navigation.php");?>
-<?php include("build/includes/full-carousel.php");?> 
+include("autoloader.php");
+include("build/includes/database.php");
+include("build/includes/login-modal.php");
+include("build/includes/head.php");
+include("build/includes/navigation.php");
+include("build/includes/full-carousel.php");
 
-<div class="container">
+$page_title = "Fabrique Beauty";
+
+?>
+
+<div class="container image-container">
   <div class="row image-row">
-    <div class="col-lg-8 col-md-8">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
       <div class="image-col" style="background-image: url('build/images/image-row/hair-800-500.jpg');">
         <div class="image-caption left">
           <p>Aenean non elit felis. Donec at nisi auctor, congue ligula ut, molestie.</p>
@@ -18,7 +21,7 @@ session_start();
         </div>
       </div>
     </div>
-    <div class="col-lg-4 col-md-4">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
       <div class="image-col" style="background-image: url('build/images/image-row/plants-500-400.jpg');">
         <div class="image-caption centered">
           <p>Did you know that all our products are organic? Just because you shouldn't put anything but that on your skin.</p>
@@ -28,7 +31,7 @@ session_start();
     </div>
   </div>
   <div class="row image-row">
-    <div class="col-lg-4 col-md-4">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
       <div class="image-col" style="background-image: url('build/images/image-row/makeup-400-500.jpg');">
         <div class="image-caption centered">
           <p>Take your look into new dimensions. Find all the secrets to an amazingly beautiful make up.</p>
@@ -36,7 +39,7 @@ session_start();
         </div>
       </div>
     </div>
-    <div class="col-lg-8 col-md-8">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
       <div class="image-col" style="background-image: url('build/images/image-row/micro-plants-800-500.jpg');">
           <div class="image-caption left">
           <p>Aenean non elit felis. Donec at nisi auctor, congue ligula ut, molestie.</p>

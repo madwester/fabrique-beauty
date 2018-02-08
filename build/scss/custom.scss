@@ -140,7 +140,7 @@ NAVBAR
     }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 766px) {
     .nav-button {
         border-radius: 0;
         margin: 0;
@@ -151,6 +151,9 @@ NAVBAR
     .navbar{
         border-bottom: 3px solid $active-gray;
         min-height: 0;
+    }
+    .navbar-nav {
+        margin: 0 -15px;
     }
 }
 
@@ -337,11 +340,6 @@ FULL WIDTH CAROUSEL
     -o-background-size: cover;
 }
 
-@media only screen and (max-width: 767px) {
-    .fill {
-        height: 400px;
-    }
-}
 /*---------------------------
 
 IMAGE ROW
@@ -351,17 +349,6 @@ IMAGE ROW
     margin: 50px 0 20px 0;
 }
 
-@media only screen and (max-width: 767px) {
-    .image-row {
-       width: 350px;
-    }
-}
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-    .image-row {
-       width: 550px;
-    }
-}
-
 .image-col {
     height: 500px;
     width: 100%;
@@ -369,7 +356,7 @@ IMAGE ROW
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
-    -o-background-size: cover;
+    -o-background-size: cover; 
 }
 
 .image-caption {
@@ -398,6 +385,37 @@ IMAGE ROW
     margin: auto
 }
 
+@media only screen and (max-width: 767px) {
+    .image-row {
+       width: 450px;
+       margin: 0 auto;
+    }
+    .image-col {
+        margin: 20px;
+    }
+    .image-caption.centered {
+        left: 50px;
+        right: auto;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .image-container {
+        width: auto;
+    }
+    .image-row {
+       width: auto;
+    }
+    .image-caption {
+        width: 150px;
+        p {
+            font-size: 0.9em;
+        }
+    }
+}
+
+
+
 
 /*---------------------------
 
@@ -410,6 +428,12 @@ TOP PICK ROW
     margin: 50px auto 30px auto;
     width: auto;
     text-align: center;
+}
+@media only screen and (max-width: 767px) {
+    .top-pick-row {
+        width: 400px;
+    }
+    
 }
 .top-pick-col {
     margin: 10px 0;
