@@ -1,7 +1,7 @@
 <?php
 class Database{
     protected $connection;
-    protected function __construct(){
+    public function __construct(){
         //get environment variables
         $host = getenv("host");
         $user = getenv("username");
@@ -10,8 +10,9 @@ class Database{
         //create connection
         $this -> connection = mysqli_connect($host, $user, $password, $database);
     }
-    protected function getConnection(){
+    public function getConnection(){
         return $this -> connection;
     }
+    
 }
 ?>

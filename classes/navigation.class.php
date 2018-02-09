@@ -1,9 +1,13 @@
 <?php
-class Navigation{
+class Navigation extends Database{
     private $logged_in; //tells if the user is logged in or not
     private $current_page;
+    public $categoryArray = array();
+    public $subCategoryArray = array();
+    
     
     public function __construct(){
+        parent::__construct();
         //check session to see if user is logged in
         if( isset($_SESSION["account_id"]) ){
             $this -> logged_in = true;   
@@ -15,39 +19,34 @@ class Navigation{
         $this -> current_page = $_SERVER["PHP_SELF"];
     }
     
-    public function getNavigation(){
-        $nav_array = array();
-        if($this -> logged_in == false){
-            $nav_items = array(
-                "home" => "index.php", 
-                "register" => "register.php",
-                "login" => "login.php",
-                "news" => "news.php"
-            );
-        }
-        else{
-            $nav_items = array(
-                "home" => "index.php",
-                "logout" => "logout.php",
-                "news" => "news.php"
-            );
-        }
-        
-        //add the ul element to nav_array
-        array_push($nav_array, "<ul class=\"nav navbar-nav navbar-right\">");
-        foreach($nav_items as $name => $link){
-            if( $link == $this -> current_page ){
-                $class = "class=\"active\"";
+    public function getTopCategories(){
+        $query = "SELECT * FROM categories WHERE parent = 0";
+        $statement = $this -> connection -> prepare($query);
+        if($statement -> execute()){
+            $result = $statement -> get_result(); //result is all of the data like a table, multiple rows
+            if($result -> num_rows > 0){
+                while($row = $result -> fetch_assoc()){
+                    array_push($this -> categoryArray, $row);
+                }
             }
-            else{
-                $class = "";
-            }
-            $element = "<li $class><a href=\"$link\">$name</a></li>";
-            array_push( $nav_array, $element );
+            
         }
-        // </ul> at the end of array
-        array_push( $nav_array, "</ul>");
-        return implode( $nav_array, "");
+        return $this -> categoryArray;
     }
-}
+    
+    public function getSubCategories($id){
+        $query = "SELECT * FROM categories WHERE parent = ?";
+        $statement = $this -> connection -> prepare($query);
+        $statement -> bind_param("i", $id);
+        if($statement -> execute()){
+            $result = $statement -> get_result(); //result is all of the data like a table, multiple rows
+            if($result -> num_rows > 0){
+                while($row = $result -> fetch_assoc()){
+                    array_push($this -> subCategoryArray, $row);
+                }
+                return $this -> subCategoryArray;
+            }
+        }
+    }
+    }
 ?>

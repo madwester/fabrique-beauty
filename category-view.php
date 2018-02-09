@@ -6,12 +6,17 @@ include("build/includes/login-modal.php");
 include("build/includes/head.php");
 include("build/includes/navigation.php");
 
-$page_title = "Fabrique Beauty - Face Care";
+$page_title = "Fabrique Beauty";
 
 //create instance of products class
 $products = new Products();
 $product_items = $products -> getProducts();
 
+if($_GET["cat_id"]){
+    $id = $_GET["cat_id"];
+    $categories = new Navigation();
+    $cat_array = $categories -> getSubCategories($id);
+}
 ?>
 
 <main>
@@ -23,20 +28,14 @@ $product_items = $products -> getProducts();
             <nav class="col-lg-2 col-md-2 col-sm-3 side-bar">
                 <ul class="nav nav-stacked category-list">
                     <?php
-                    //make sure to check the length when using foreach
-                        if (count( $cat_array ) > 0){
-                            foreach( $cat_array as $cat_nav_item ){
-                                $id = $cat_nav_item["id"];
-                                $name = $cat_nav_item["name"];
-                                $count = $cat_nav_item["cat_count"];
-                                echo "<li><a href=\"index.php?category=$id\">$name</a> </li>";
-                            }
-                        }
+                    if(count($cat_array) > 0){
+                      foreach($cat_array as $item){
+                        $catId = $item["category_id"];
+                        $catName = $item["category_name"];
+                        echo "<li><a href=\"category-view.php?cat_id=$catId\">$catName</a></li>";
+                      }
+                    }
                     ?>
-                    <li><a href="#">Cleaners</a></li>
-                    <li><a href="#">Moisturisers</a></li>
-                    <li><a href="#">Mask</a></li>
-                    <li><a href="#">Eye Care</a></li>
                 </ul>
             </nav>
             <div class="col-lg-10 col-md-10 col-sm-9 content\">
@@ -60,7 +59,7 @@ $product_items = $products -> getProducts();
                             </div>";
                         }
                     }
-    ?>
+                    ?>
                 </div>
             </div>
     </div>

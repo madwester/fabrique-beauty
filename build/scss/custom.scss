@@ -414,9 +414,6 @@ IMAGE ROW
     }
 }
 
-
-
-
 /*---------------------------
 
 TOP PICK ROW
@@ -470,16 +467,19 @@ PRODUCT CONTENT
 
 ---------------------------*/
 .product-row {
-    //border: 1px solid pink;
     margin: 15px 45px 15px 0; 
+    height: 100px;
 }
 .product-item {
-    //border: 1px solid green;
     text-align: center;
+    min-height: 360px;
+}
+.product-caption {
     h4 {
         text-transform: uppercase;
-        font-size: 1.3em;
+        font-size: 1.0em;
         font-weight: 700;
+        height: 50px;
     }
     h6 {
         font-size: 1.1em;
