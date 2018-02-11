@@ -22,6 +22,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["login-name"] == "login-value"
             if( password_verify( $password, $hash) ){
                 //password is correct
                 $_SESSION["account_id"] = $account_id;
+                $_SESSION["name"] = $name;
                 echo "password is correct";
             }
             else{
@@ -159,7 +160,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["register-name"] == "register-
                             <input class="form-control" type="password" name="password2" id="password2" placeholder="Retype Password..">
                             <span class="help-block"><?php echo $errors["password"]; ?></span>
                         </div>
-                <button type="submit" value="register-value" name="register-name" class="btn btn-default btn-modal btn-login">Create an account</button>
+                <button type="submit" value="register-value" name="register-name" class="btn btn-default btn-modal btn-yellow">Create an account</button>
               </form>
                   </div>
       <div role="tabpanel" class="tab-pane" id="signin">
@@ -169,8 +170,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["register-name"] == "register-
                     <div class="form-group">
                         <input type="text" class="form-control" id="email" name="email" placeholder="Your email">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Your password">
-                        <button type="submit" value="login-value" name="login-name" class="btn btn-default btn-modal btn-login">Log in</button>
-                        <button type="submit" name="#" class="btn btn-default btn-modal btn-login-gray">Forgot your password?</button>
+                        <button type="submit" value="login-value" name="login-name" class="btn btn-default btn-modal btn-yellow">Log in</button>
+                        <button type="submit" name="#" class="btn btn-default btn-modal btn-gray">Forgot your password?</button>
                     </div>
                 </form>
             </div>

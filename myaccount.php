@@ -1,16 +1,19 @@
 <?php session_start();
 $page_title = "Fabrique Beauty - My Account";
+include("autoloader.php");
 include("build/includes/database.php");
 include("build/includes/head.php");
 include("build/includes/navigation.php");
 include("build/includes/login-modal.php");
-$name = $_POST["name"];
 ?>
 <div class="container">
     <div class="row">
         <div class="col-md-8">
             <?php 
-                echo $name;            
+                // print username if logged in
+              if( $_SESSION["account_id"] ){
+                echo "<p> Hello " .  $_SESSION["name"] . "</p>";
+              }            
             ?>
         </div>
         <div class="col-md-4">

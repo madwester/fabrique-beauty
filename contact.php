@@ -1,9 +1,12 @@
 <?php 
 session_start();
+include("autoloader.php");
+include("build/includes/database.php");
 $page_title = "Fabrique Beauty - Face Care";
 include("build/includes/login-modal.php");
 include("build/includes/head.php");
-include("build/includes/navigation.php");?>
+include("build/includes/navigation.php");
+?>
 <div class="container-fluid zero-margin">
     <div class="letter-box">
         <div class="contact-inline">

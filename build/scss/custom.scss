@@ -39,6 +39,9 @@ ul{
 .border {
     border: 1px solid green;
 }
+.price::before{
+    content:"$";
+}
 /*---------------------------
 
 NAVBAR
@@ -239,6 +242,13 @@ SEARCH BAR
     outline: none;
 }
 
+.search-result {
+    margin: 30px;
+    img {
+        width: 150px;
+    }
+}
+
 /*---------------------------
 
 LOGIN MODAL
@@ -293,10 +303,10 @@ LOGIN MODAL
     width: 100%;
     margin: 3px 0;
 }
-.btn-login {
+.btn-yellow {
     background-color: $primarycolor-yellow;
 }
-.btn-login-gray {
+.btn-gray {
     background-color: $primarycolor-light-gray; 
 }
 .nav-tabs > li.active > a {
@@ -444,7 +454,7 @@ TOP PICK ROW
     text-transform: uppercase;
     font-weight: 700;
     font-size: 22px;
-    margin: 10px;
+    margin: 10px 0 20px 0;
 }
 .top-pick-caption {
     margin: 12px 0;
@@ -455,9 +465,6 @@ TOP PICK ROW
     }
     h6 {
         
-    }
-    h6::before{
-    content:"$";
     }
 }
 
@@ -479,19 +486,54 @@ PRODUCT CONTENT
         text-transform: uppercase;
         font-size: 1.0em;
         font-weight: 700;
-        height: 50px;
+        height: 35px;
     }
     h6 {
         font-size: 1.1em;
-    }
-    h6::before{
-    content:"$";
     }
 }
 .sidebar {
     margin: 8px 0;
 }
 
+/*---------------------------
+
+detail.php
+
+---------------------------*/
+
+.detail-row {
+    margin: 15px;
+    h2 {
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 1.5em;
+    }
+    h3 {
+        margin: 10px 0;
+        font-size: 1.3em;
+    }
+    p {
+        margin: 20px 0;
+    }
+}
+.btn-fabrique {
+    color: white;
+    font-size: 1.1em;
+    background-color: $primarycolor-yellow;
+    border: 0;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    width: auto;
+    margin: 3px 0;
+    @include ease-animation(all, 0.2s);
+    &:hover{
+        color: #000;
+        background-color:$default-light-gray;
+        cursor: pointer;
+        
+    }
+}
 /*---------------------------
 
 CONTACT / FAQ
@@ -574,6 +616,7 @@ CONTACT / FAQ
 .bread {
     background-color: $active-gray;
     color: white;
+    margin-bottom: 30px;
 }
 
 /*---------------------------

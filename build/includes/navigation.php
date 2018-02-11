@@ -22,8 +22,13 @@ $nav_items = $nav -> getTopCategories();
   </a>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6 col-xs-5 nav-search">
-              <form>
-                <input type="text" class="search-input" name="search" placeholder="Search..">
+              <form role="search" method="get" action="search.php">
+                    <?php 
+                    if($_GET["search"]){ 
+                      $searchvalue = $_GET["search"]; 
+                    }
+                    ?>
+                <input type="text" class="search-input form-control" name="search" placeholder="Search.." value="<?php echo $searchvalue;?>">
               </form>
             </div>
             </div>

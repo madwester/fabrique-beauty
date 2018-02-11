@@ -21,7 +21,7 @@ if($_GET["cat_id"]){
 
 <main>
     <div class="container-fluid bread">
-        <h6>Category > Sub Category</h6>
+        <h6><a href="#">Home</a> / </h6>
     </div>
     <div class="container-fluid">
         <div class="row">
@@ -52,9 +52,9 @@ if($_GET["cat_id"]){
                         echo "  <div class=\"col-lg-2 col-md-3 col-sm-4 col-xs-6 product-item\">
                                 <img class=\"img-responsive\" src=\"/build/images/products-600x600/$image\">
                                 <div class=\"product-caption\">
-                                    <a href=\"#\">
-                                    <h4>$name</h4></a>
-                                    <h6>$price</h6>
+                                    <a href=\"detail.php?id=$id\"><h4>$name</h4></a>
+                                    <h6>$brand</h6>
+                                    <h6 class=\"price\">$price</h6>
                                 </div>
                             </div>";
                         }

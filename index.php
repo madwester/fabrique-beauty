@@ -9,6 +9,10 @@ include("build/includes/full-carousel.php");
 
 $page_title = "Fabrique Beauty";
 
+//create instance of products class
+$topProducts = new Products();
+$topProductsItems = $topProducts -> getTopProducts();
+
 ?>
 
 <div class="container image-container">
@@ -52,50 +56,29 @@ $page_title = "Fabrique Beauty";
 <div class="container top-pick-container">
   <div class="row top-pick-row">
     <h3 class="top-pick-heading">Our top favourite products we need to tell you about.</h3>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 top-pick-col">
-      <img src="http://via.placeholder.com/150x150">
-      <div class="top-pick-caption">
-        <h4>Title</h4>
-        <h6>Price</h6>
-      </div>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 top-pick-col">
-      <img src="http://via.placeholder.com/150x150">
-      <div class="top-pick-caption">
-        <h4>Title</h4>
-        <h6>Price</h6>
-      </div>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 top-pick-col">
-      <img src="http://via.placeholder.com/150x150">
-      <div class="top-pick-caption">
-        <h4>Title</h4>
-        <h6>Price</h6>
-      </div>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 top-pick-col">
-      <img src="http://via.placeholder.com/150x150">
-      <div class="top-pick-caption">
-        <h4>Title</h4>
-        <h6>Price</h6>
-      </div>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 top-pick-col">
-      <img src="http://via.placeholder.com/150x150">
-      <div class="top-pick-caption">
-        <h4>Title</h4>
-        <h6>Price</h6>
-      </div>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 top-pick-col">
-      <img src="http://via.placeholder.com/150x150">
-      <div class="top-pick-caption">
-        <h4>Title</h4>
-        <h6>Price</h6>
-      </div>
-    </div>
+<?php
+if( count($topProductsItems) > 0){
+    foreach( $topProductsItems as $topProduct ){
+        $id = $topProduct["product_id"];
+        $name = $topProduct["name"];
+        $price = $topProduct["price"];
+        $description = $topProduct["description"];
+        $brand = $topProduct["brand"];
+        $image = $topProduct["image"];
+    echo "<div class=\"col-lg-2 col-md-4 col-sm-4 col-xs-6 top-pick-col\">
+            <img src=\"/build/images/products-600x600/$image\">
+              <div class=\"top-pick-caption\">
+                  <a href=\"detail.php?id=$id\"><h4>$name</h4></a>
+                  <h5>$brand</h5>
+                  <h6 class=\"price\">$price</h6>
+              </div>
+        </div>";
+    }
+}
+?>
   </div>
 </div>
+
 <?php include("build/includes/footer.php");?> 
 </div>
 </html>
