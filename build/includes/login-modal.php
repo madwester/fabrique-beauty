@@ -23,7 +23,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["login-name"] == "login-value"
                 //password is correct
                 $_SESSION["account_id"] = $account_id;
                 $_SESSION["name"] = $name;
-                echo "password is correct";
             }
             else{
                 //password is incorrect
@@ -166,7 +165,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["register-name"] == "register-
       <div role="tabpanel" class="tab-pane" id="signin">
         <h5 class="modal-title">Welcome back, beauty friend!</h5>
             <div class="login-group">
-                <form id="login-form" method="post" action="/face.php">
+                <form id="login-form" method="post" action="/category-view.php?cat_id=1">
                     <div class="form-group">
                         <input type="text" class="form-control" id="email" name="email" placeholder="Your email">
                         <input type="password" class="form-control" id="password" name="password" placeholder="Your password">

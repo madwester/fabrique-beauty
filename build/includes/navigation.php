@@ -44,7 +44,13 @@ $nav_items = $nav -> getTopCategories();
       foreach($nav_items as $item){
         $navId = $item["category_id"];
         $navName = $item["category_name"];
-        echo "<li><a href=\"category-view.php?cat_id=$navId\">$navName</a></li>";
+        if($navId == $_GET['cat_id']){
+          $active = "class = \"active\"";  
+        }
+        else{
+          $active = "";
+        }
+        echo "<li $active><a href=\"category-view.php?cat_id=$navId\">$navName</a></li>";
       }
     }
     ?>

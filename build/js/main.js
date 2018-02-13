@@ -26,7 +26,6 @@ $(document).ready(function(){
     });
 });
 
-
 // Instantiate the Bootstrap carousel
 $('.multi-item-carousel').carousel({
   interval: false

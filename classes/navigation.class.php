@@ -15,7 +15,7 @@ class Navigation extends Database{
         else {
             $this -> logged_in = false; 
         }
-        //get the name of the current page
+        //getting name of the current page
         $this -> current_page = $_SERVER["PHP_SELF"];
     }
     
@@ -34,6 +34,27 @@ class Navigation extends Database{
         return $this -> categoryArray;
     }
     
+    public function getActiveCategory(){
+        $query =    "SELECT 
+                    c1.category_id as parentid,
+                    c1.category_name as parentname,
+                    c2.category_id as child_id,
+                    c2.category_name as child_name
+                    FROM categories c1
+                    INNER JOIN categories c2
+                    ON c1.category_id = c2.parent";
+                    $statement = $this -> connection -> prepare($query);
+                    if($statement -> execute()){
+                        $result = $statement -> get_result();
+                        if($result -> num_rows > 0){
+                            while($row = $result -> fetch_assoc()){
+                                array_push($this -> categoryArray, $row);
+                            }
+                        }
+                    }
+                    return $this -> categoryArray;
+    }
+    
     public function getSubCategories($id){
         $query = "SELECT * FROM categories WHERE parent = ?";
         $statement = $this -> connection -> prepare($query);
@@ -46,7 +67,52 @@ class Navigation extends Database{
                 }
                 return $this -> subCategoryArray;
             }
+            else{
+                $query = "SELECT * FROM categories WHERE parent = ( SELECT parent FROM categories WHERE category_id = ? )";
+                $statement = $this -> connection -> prepare($query);
+                $statement -> bind_param("i", $id);
+                if($statement -> execute()){
+                    $result = $statement -> get_result();
+                    if($result -> num_rows > 0){
+                        while($row = $result -> fetch_assoc()){
+                            array_push($this -> subCategoryArray, $row);
+                        }
+                        return $this -> subCategoryArray;
+                    }
+                }
+            }
         }
     }
+    
+    public function getNav(){
+        
+        $activePage;
+        
+        if (strpos($_SERVER['REQUEST_URI'], "cat_id=1") !== false){
+        echo 'active page is face';
+        $activePage = 1;
+        } 
+        else if (strpos($_SERVER['REQUEST_URI'], "cat_id=2") !== false){
+        echo 'active page is body';
+        $activePage = 2;
+        } 
+        else if (strpos($_SERVER['REQUEST_URI'], "cat_id=3") !== false){
+        echo 'active page is hair';
+        $activePage = 3;
+        } 
+        else if (strpos($_SERVER['REQUEST_URI'], "cat_id=4") !== false){
+        echo 'active page is makeup';
+        $activePage = 4;
+        } 
+        else {
+        echo 'active page something else';
+        }
+        
+        $nav_array = array();
+        $nav_items = array("face","body","hair","makeup");
+        if($activePage == 1){
+            
+        }
     }
+}
 ?>

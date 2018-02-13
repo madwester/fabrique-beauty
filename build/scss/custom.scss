@@ -10,10 +10,14 @@
 GENERAL
 
 ---------------------------*/
-
+html {
+    position: relative;
+    min-height: 100%;
+}
 body {
     @include reset();
     font-family: 'gotham';
+    margin-bottom: 200px;
 }
 
 a {
@@ -473,6 +477,9 @@ TOP PICK ROW
 PRODUCT CONTENT
 
 ---------------------------*/
+.shop-row {
+    margin-top: 50px;
+}
 .product-row {
     margin: 15px 45px 15px 0; 
     height: 100px;
@@ -496,14 +503,14 @@ PRODUCT CONTENT
     margin: 8px 0;
 }
 
-/*---------------------------
+/*--------------------------- 
 
 detail.php
 
 ---------------------------*/
 
 .detail-row {
-    margin: 15px;
+    margin-top: 80px;
     h2 {
         text-transform: uppercase;
         font-weight: 600;
@@ -626,6 +633,7 @@ FOOTER
 ---------------------------*/
 
 footer {
+    position: absolute;
     bottom: 0;
     width: 100%;
     background-color: $primarycolor-gray;

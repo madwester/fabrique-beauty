@@ -11,13 +11,13 @@ include("build/includes/login-modal.php");
         <div class="col-md-8">
             <?php 
                 // print username if logged in
-              if( $_SESSION["account_id"] ){
+              if( $_SESSION["name"] ){
                 echo "<p> Hello " .  $_SESSION["name"] . "</p>";
               }            
             ?>
         </div>
         <div class="col-md-4">
-            <?php echo '<a href="build/includes/logout.php"><button type="submit" name="logout-btn" class="btn btn-default btn-modal btn-login">Log out</button></a>';?>
+            <?php echo '<a href="build/includes/logout.php"><button type="submit" name="logout-btn" class="btn btn-default btn-modal btn-fabrique">Log out</button></a>';?>
         </div>
     </div>
 </div>

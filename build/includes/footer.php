@@ -1,4 +1,8 @@
 </body>
+<?php
+$nav = new Navigation();
+$nav_items = $nav -> getTopCategories();
+?>
 <footer class="footer">
         <div class="container-fluid">
             <div class="row wrap-foot">
@@ -6,10 +10,15 @@
                 <div class="col-md-4 col-sm-12 col-foot">
                   <h6>Products</h6>
                   <ul>
-                    <li><a href="#">Face</a></li>
-                    <li><a href="#">Body</a></li>
-                    <li><a href="#">Hair</a></a></li>
-                    <li><a href="#">Make up</a></li>
+                    <?php
+                    if(count($nav_items) > 0){
+                      foreach($nav_items as $item){
+                        $navId = $item["category_id"];
+                        $navName = $item["category_name"];
+                        echo "<li><a href=\"category-view.php?cat_id=$navId\">$navName</a></li>";
+                      }
+                    }
+                    ?>
                   </ul>
                 </div>
                 <div class="col-md-4 col-sm-12 col-foot">
@@ -43,6 +52,7 @@
             </div>
         </div>
     </footer>
+    
 <script src="/compontents/jquery/dist/jquery.min.js"></script>
 <script src="/compontents/bootstrap/dist/js/bootstrap.min.js"></script>
 <script src="/build/js/main.js"></script>
