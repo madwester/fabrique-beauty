@@ -1,6 +1,11 @@
 <?php
 $nav = new Navigation();
 $nav_items = $nav -> getTopCategories();
+
+$navv = new Navigation();
+$nav_itemss = $navv -> getActiveCategory($id);
+
+
 ?>
     
 <body>
@@ -60,7 +65,7 @@ $nav_items = $nav -> getTopCategories();
     <?php
     //check if user is logged in
     if(isset($_SESSION["account_id"])){
-      echo '<li class="nav-button myaccount-btn"><a href="../myaccount.php">my account (1)<i class="icon ion-ios-arrow-forward"></i></a></li>';            
+      echo '<li class="nav-button myaccount-btn"><a href="../myaccount.php">my account<i class="icon ion-ios-arrow-forward"></i></a></li>';            
     }
     else{
       echo '<li class="nav-button login-btn"><a href="#">register / login <i class="icon ion-ios-arrow-forward"></i></a></li>';

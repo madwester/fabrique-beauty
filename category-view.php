@@ -16,7 +16,9 @@ if($_GET["cat_id"]){
     $id = $_GET["cat_id"];
     $categories = new Navigation();
     $cat_array = $categories -> getSubCategories($id);
+    $activeCat = $categories -> getActiveCategory($id);
 }
+
 ?>
 
 
@@ -31,7 +33,13 @@ if($_GET["cat_id"]){
                       foreach($cat_array as $item){
                         $catId = $item["category_id"];
                         $catName = $item["category_name"];
-                        echo "<li><a href=\"category-view.php?cat_id=$catId\">$catName</a></li>";
+                        if($activeCat["child_id"] == $_GET["cat_id"]){
+                            $active = "class = \"active\"";
+                        }
+                        else{
+                            $active = "";
+                        }
+                        echo "<li $active><a href=\"category-view.php?cat_id=$catId\">$catName</a></li>";
                       }
                     }
                     ?>

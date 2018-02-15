@@ -21,7 +21,7 @@ $topProductsItems = $topProducts -> getTopProducts();
       <div class="image-col" style="background-image: url('build/images/image-row/hair-800-500.jpg');">
         <div class="image-caption left">
           <p>Aenean non elit felis. Donec at nisi auctor, congue ligula ut, molestie.</p>
-          <a href="#">hair <i class="icon ion-ios-arrow-forward"></i></a>
+          <a href="category-view.php?cat_id=3">hair <i class="icon ion-ios-arrow-forward"></i></a>
         </div>
       </div>
     </div>
@@ -29,7 +29,7 @@ $topProductsItems = $topProducts -> getTopProducts();
       <div class="image-col" style="background-image: url('build/images/image-row/plants-500-400.jpg');">
         <div class="image-caption centered">
           <p>Did you know that all our products are organic? Just because you shouldn't put anything but that on your skin.</p>
-          <a href="#">body <i class="icon ion-ios-arrow-forward"></i></a>
+          <a href="category-view.php?cat_id=2">body <i class="icon ion-ios-arrow-forward"></i></a>
         </div>
       </div>
     </div>
@@ -39,7 +39,7 @@ $topProductsItems = $topProducts -> getTopProducts();
       <div class="image-col" style="background-image: url('build/images/image-row/makeup-400-500.jpg');">
         <div class="image-caption centered">
           <p>Take your look into new dimensions. Find all the secrets to an amazingly beautiful make up.</p>
-          <a href="#">makeup <i class="icon ion-ios-arrow-forward"></i></a>
+          <a href="category-view.php?cat_id=4">makeup <i class="icon ion-ios-arrow-forward"></i></a>
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@ $topProductsItems = $topProducts -> getTopProducts();
       <div class="image-col" style="background-image: url('build/images/image-row/micro-plants-800-500.jpg');">
           <div class="image-caption left">
           <p>Aenean non elit felis. Donec at nisi auctor, congue ligula ut, molestie.</p>
-          <a href="#">face <i class="icon ion-ios-arrow-forward"></i></a>
+          <a href="category-view.php?cat_id=1">face <i class="icon ion-ios-arrow-forward"></i></a>
         </div>
       </div>
     </div>

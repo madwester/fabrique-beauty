@@ -25,11 +25,12 @@ include("build/includes/navigation.php");
         <div class="col-md-12">
           <?php
           if( isset($searchvalue) ){
-            echo "<h4>Search result for your search: <strong>$searchvalue</strong></h4>";
+            echo "<h4 class=\"search-result\">Search result '$searchvalue'</h4>";
           }
           ?>
         </div>
       </div>
+      <div class="row search-row">
       <?php
       if($result -> num_rows > 0){
         while( $row = $result -> fetch_assoc() ){
@@ -38,22 +39,20 @@ include("build/includes/navigation.php");
           $brand = $row["brand"];
           $price = $row["price"];
           $image = $row["image"];
-          echo "<div class=\"row search-result\">
-            <div class=\"col-md-2\">
-              <img class=\"img-responsive\" src=\"/build/images/products-600x600/$image\">
-            </div>
-            <div class=\"col-md-10\">
-              <h4>$name</h4>
-              <h5>$brand</h5>
-              <h5 class=\"price\">$price</h5>
-              <a href=\"detail.php?id=$id\">Read More</a>
-            </div>
-          </div>";
+          echo " <div class=\"col-lg-2 col-md-3 col-sm-4 col-xs-6 product-item\">
+                                <img class=\"img-responsive\" src=\"/build/images/products-600x600/$image\">
+                                <div class=\"product-caption\">
+                                    <a href=\"detail.php?id=$id\"><h4>$name</h4></a>
+                                    <h6>$brand</h6>
+                                    <h6 class=\"price\">$price</h6>
+                                </div>
+                            </div>";
         }
       }
       else{
         echo "Sorry, we couldn't find the product you searched for.";
       }
       ?>
+      </div>
     </div>
 <?php include("build/includes/footer.php");?>   

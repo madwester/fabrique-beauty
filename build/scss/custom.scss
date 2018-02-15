@@ -19,6 +19,16 @@ body {
     font-family: 'gotham';
     margin-bottom: 200px;
 }
+@media only screen and (max-width: 766px) {
+    body {
+        margin-bottom: 480px;
+    }
+}
+@media only screen and (min-width: 767px) and (max-width: 991px) {
+    body {
+        margin-bottom: 400px;
+    }
+}
 
 a {
     text-decoration: none;
@@ -235,7 +245,7 @@ SEARCH BAR
     background-image: url('../images/searchicon.png');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
-    padding: 10px 0 10px 40px;
+    padding: 20px 0 20px 40px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
@@ -252,7 +262,13 @@ SEARCH BAR
         width: 150px;
     }
 }
-
+.search-row {
+    margin-top: 50px;
+}
+//h4 
+.search-result {
+    margin-top: 20px;
+}
 /*---------------------------
 
 LOGIN MODAL
@@ -494,6 +510,7 @@ PRODUCT CONTENT
         font-size: 1.0em;
         font-weight: 700;
         height: 35px;
+        margin: 25px 0 10px 0;
     }
     h6 {
         font-size: 1.1em;
@@ -575,6 +592,24 @@ CONTACT / FAQ
         font-weight: 700;
     }
 }
+
+@media only screen and (max-width: 766px) {
+    .container-faq{
+        padding: 30px 20px;
+    }
+    .contact-inline{
+        width: 400px;
+        h1{
+            font-size: 1.5em;
+        }
+    }
+    
+}
+@media only screen and (min-width: 766px) and (max-width: 991px) {
+    .container-faq{
+        padding: 20px 0 20px 100px;
+    }
+}
 .btn-faq {
     background-color: transparent;
 }
@@ -602,6 +637,16 @@ CONTACT / FAQ
         font-weight: 700;
         margin-bottom: 15px;
     }
+}
+@media only screen and (max-width: 766px) {
+    .faq-inline {
+        h3{
+            font-size: 1em;
+        }
+        p{
+            font-size: 0.8em;
+        }
+}
 }
 .question {
     margin-bottom: 10px;
@@ -661,25 +706,31 @@ footer {
     
 }
 
-@media only screen and (max-width: 991px) {
+@media only screen and (min-width: 767px) and (max-width: 991px) {
     footer {
-        height: 480px;
+        height: 400px;
     }
 }
-
 @media only screen and (max-width: 766px) {
     footer {
-        height: auto;
+        height: 480px;
         img {
             width: 200px;
             margin: 0 0 15px 0;
         }
     }
     .category-foot {
-        margin-bottom: 15px;
+        margin-bottom: 5px;
     }
     .col-foot {
         margin-bottom: 25px;
+    }
+    .logo-foot {
+        text-align: left;
+        padding: 0 28px;
+        img {
+            display: none;
+        }
     }
 }
 

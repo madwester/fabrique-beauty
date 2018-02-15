@@ -5,7 +5,7 @@
 if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["login-name"] == "login-value"){
     $email = $_POST["email"];
     $password = $_POST["password"];
-    $query = "SELECT account_id, email, password FROM accounts WHERE email=?";
+    $query = "SELECT account_id, name, email, password FROM accounts WHERE email=?";
     $statement1 = $connection -> prepare($query);
     $statement1 -> bind_param("s", $email);
     //execute runs the query with the parameter, it return true or false
@@ -17,12 +17,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && $_POST["login-name"] == "login-value"
             $user = $result -> fetch_assoc(); //converting result to associative array, an array that doesnt have index, it has names instead
             $account_id = $user["account_id"];
             $email = $user["email"];
+            $name = $user["name"];
             $hash = $user["password"];
             //then we have to check if password matches
             if( password_verify( $password, $hash) ){
-                //password is correct
+                //password is correct, so we are creating user session variables
                 $_SESSION["account_id"] = $account_id;
                 $_SESSION["name"] = $name;
+                $_SESSION["email"] = $email;
             }
             else{
                 //password is incorrect

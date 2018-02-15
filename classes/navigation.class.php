@@ -34,7 +34,7 @@ class Navigation extends Database{
         return $this -> categoryArray;
     }
     
-    public function getActiveCategory(){
+    public function getActiveCategory($id){
         $query =    "SELECT 
                     c1.category_id as parentid,
                     c1.category_name as parentname,
@@ -42,8 +42,10 @@ class Navigation extends Database{
                     c2.category_name as child_name
                     FROM categories c1
                     INNER JOIN categories c2
-                    ON c1.category_id = c2.parent";
+                    ON c1.category_id = c2.parent
+                    WHERE c2.category_id = ?";
                     $statement = $this -> connection -> prepare($query);
+                    $statement -> bind_param("i", $id);
                     if($statement -> execute()){
                         $result = $statement -> get_result();
                         if($result -> num_rows > 0){
@@ -59,6 +61,7 @@ class Navigation extends Database{
         $query = "SELECT * FROM categories WHERE parent = ?";
         $statement = $this -> connection -> prepare($query);
         $statement -> bind_param("i", $id);
+        //$activeCat = $this -> getActiveCategory($id);
         if($statement -> execute()){
             $result = $statement -> get_result(); //result is all of the data like a table, multiple rows
             if($result -> num_rows > 0){

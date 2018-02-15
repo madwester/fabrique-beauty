@@ -4,6 +4,7 @@ class Basket extends Database {
     private $account_id;
     private $basket_id;
     public $errors = array();
+    
     public function __construct( $account_id = NULL ){
         parent::__construct();
         if( empty ( $account_id ) ){
@@ -45,7 +46,9 @@ class Basket extends Database {
         }
     }
     public function addItem( $product_id ){
-        $query_add = "INSERT INTO basket (basket_id, product_id) VALUES (?, ?)";
+        $query_add = "INSERT INTO 
+        basket_items 
+        (basket_id, product_id) VALUES (?, ?)";
         if($this -> list_id){
             $statement = $this -> conn -> prepare($query);
             $statement -> bind_param("ii", $this->list_id, $product_id);
